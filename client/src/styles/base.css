@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply h-screen w-screen
+    }
+
+    body {
+        @apply bg-t-darkest px-5 py-3 overflow-hidden overflow-y-scroll font-agave h-screen w-screen text-t-lightest;
+    }
+
+    ::selection {
+        @apply text-t-lightest bg-t-light
+    }
+
+    ::-moz-selection {
+        @apply text-t-lightest bg-t-light
+    }
+
+    @font-face {
+        font-family: agave;
+        src: url(/fonts/agave-regular-nfm.ttf);
+    }
+
+    @font-face {
+        font-family: barlow;
+        src: url(/fonts/BarlowSemiCondensed-Bold.ttf);
+    }
+}
+
+@layer components {
+    #app {
+        @apply flex flex-col absolute left-0 top-0 z-0 w-full h-full items-center place-content-center;
+    }
+
+    ::-webkit-scrollbar {
+        @apply bg-slate-900 w-2;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply bg-slate-700 rounded-xl;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-slate-500;
+    }
+}
+
+@layer utilities {
+    .text-shadow-white {
+        text-shadow: -0.1rem -0.1rem 0 #FFF, 0.1rem -0.1rem 0 #FFF, -0.1rem 0.1rem 0 #FFF, 0.1rem 0.1rem 0 #FFF;
+    }
+    
+    .text-shadow-pink-600 {
+        --color: rgb(219 39 119);;
+        text-shadow : 0.2rem 0.2rem 0 var(--color);
+    }
+    
+    .text-glow-red {
+        --color: rgb(231, 36, 29);
+        text-shadow: -0.5rem -0.5rem 25px var(--color), 0.5rem -0.5rem 25px var(--color), -0.5rem 0.5rem 25px var(--color), 0.5rem 0.5rem 25px var(--color);
+    }
+}
